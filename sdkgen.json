@@ -1,0 +1,9 @@
+{
+  "type": "client-java",
+  "require": {
+    "deutschland-api/sdk": {
+      "target": "./src/main/java/dev/deutschlandapi/sdk",
+      "namespace": "dev.deutschlandapi.sdk"
+    }
+  }
+}
