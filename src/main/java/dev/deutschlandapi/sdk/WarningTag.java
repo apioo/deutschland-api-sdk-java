@@ -59,11 +59,11 @@ public class WarningTag extends TagAbstract {
 
             switch (resp.code) {
                 case 400:
-                    throw new MessageException(this.parser.parse(resp.payload, new TypeReference<Message>(){}));
+                    throw new ResponseException(this.parser.parse(resp.payload, new TypeReference<Response>(){}));
                 case 404:
-                    throw new MessageException(this.parser.parse(resp.payload, new TypeReference<Message>(){}));
+                    throw new ResponseException(this.parser.parse(resp.payload, new TypeReference<Response>(){}));
                 case 500:
-                    throw new MessageException(this.parser.parse(resp.payload, new TypeReference<Message>(){}));
+                    throw new ResponseException(this.parser.parse(resp.payload, new TypeReference<Response>(){}));
                 default:
                     throw new UnknownStatusCodeException("The server returned an unknown status code");
             }
