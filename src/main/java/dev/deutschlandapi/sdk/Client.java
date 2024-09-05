@@ -121,4 +121,9 @@ public class Client extends ClientAbstract {
     {
         return new Client("https://api.deutschland-api.dev/", new OAuth2(clientId, clientSecret, "https://api.deutschland-api.dev/authorization/token", "", tokenStore, scopes));
     }
+
+    public static Client buildAnonymous() throws InvalidCredentialsException
+    {
+        return new Client("https://api.deutschland-api.dev/", new Anonymous());
+    }
 }
