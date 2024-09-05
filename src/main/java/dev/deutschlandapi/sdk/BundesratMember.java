@@ -14,6 +14,7 @@ public class BundesratMember {
     private String name;
     private String party;
     private String state;
+    private Boolean bundesratMember;
     private Boolean member;
     private Boolean designated;
     private String url;
@@ -61,6 +62,14 @@ public class BundesratMember {
     @JsonGetter("state")
     public String getState() {
         return this.state;
+    }
+    @JsonSetter("bundesratMember")
+    public void setBundesratMember(Boolean bundesratMember) {
+        this.bundesratMember = bundesratMember;
+    }
+    @JsonGetter("bundesratMember")
+    public Boolean getBundesratMember() {
+        return this.bundesratMember;
     }
     @JsonSetter("member")
     public void setMember(Boolean member) {
