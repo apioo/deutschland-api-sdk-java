@@ -10,7 +10,13 @@ The following example shows how you initialize the client:
 ```java
 import DeutschlandAPI.SDK;
 
-Client client = Client::build("[access_token]");
+Client client = Client::buildAnonymous();
 
-// @TODO use the client
+for (City city : client.city().getAll()) {
+    System.out.println(city.getState()); 
+}
+
 ```
+
+More information about the complete API at:
+https://app.typehub.cloud/d/deutschland-api/sdk
