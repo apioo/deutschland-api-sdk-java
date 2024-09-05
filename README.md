@@ -11,9 +11,10 @@ The following example shows how you initialize the client:
 import DeutschlandAPI.SDK;
 
 Client client = Client::buildAnonymous();
+StateCollection collection = client.state().getAll();
 
-for (City city : client.city().getAll()) {
-    System.out.println(city.getState()); 
+for (State state : collection.getEntries()) {
+    System.out.println(state.getName()); 
 }
 
 ```
