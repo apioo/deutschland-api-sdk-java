@@ -14,6 +14,7 @@ public class City {
     private String district;
     private String verb;
     private String gem;
+    private String name;
     private String zipCode;
     private Integer area;
     @JsonSetter("id")
@@ -63,6 +64,14 @@ public class City {
     @JsonGetter("gem")
     public String getGem() {
         return this.gem;
+    }
+    @JsonSetter("name")
+    public void setName(String name) {
+        this.name = name;
+    }
+    @JsonGetter("name")
+    public String getName() {
+        return this.name;
     }
     @JsonSetter("zipCode")
     public void setZipCode(String zipCode) {
