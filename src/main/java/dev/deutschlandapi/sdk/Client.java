@@ -34,6 +34,15 @@ public class Client extends ClientAbstract {
         super(baseUrl, credentials);
     }
 
+    public HospitalTag hospital()
+    {
+        return new HospitalTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
     public WarningTag warning()
     {
         return new WarningTag(
