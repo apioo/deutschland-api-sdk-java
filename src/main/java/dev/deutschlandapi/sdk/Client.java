@@ -34,6 +34,15 @@ public class Client extends ClientAbstract {
         super(baseUrl, credentials);
     }
 
+    public JobTag job()
+    {
+        return new JobTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
     public HospitalTag hospital()
     {
         return new HospitalTag(
