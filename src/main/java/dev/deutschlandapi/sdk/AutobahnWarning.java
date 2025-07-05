@@ -5,90 +5,107 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.time.LocalDateTime;
-import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+
 public class AutobahnWarning {
     private String id;
     private Boolean blocked;
     private Boolean future;
     private String title;
     private String subtitle;
-    private List<String> description;
-    private LocalDateTime startDate;
+    private java.util.List<String> description;
+    private java.time.LocalDateTime startDate;
     private AutobahnCoordinate coordinate;
-    private List<AutobahnCoordinate> lineString;
+    private java.util.List<AutobahnCoordinate> lineString;
+
     @JsonSetter("id")
     public void setId(String id) {
         this.id = id;
     }
+
     @JsonGetter("id")
     public String getId() {
         return this.id;
     }
+
     @JsonSetter("blocked")
     public void setBlocked(Boolean blocked) {
         this.blocked = blocked;
     }
+
     @JsonGetter("blocked")
     public Boolean getBlocked() {
         return this.blocked;
     }
+
     @JsonSetter("future")
     public void setFuture(Boolean future) {
         this.future = future;
     }
+
     @JsonGetter("future")
     public Boolean getFuture() {
         return this.future;
     }
+
     @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
+
     @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
+
     @JsonSetter("subtitle")
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
+
     @JsonGetter("subtitle")
     public String getSubtitle() {
         return this.subtitle;
     }
+
     @JsonSetter("description")
-    public void setDescription(List<String> description) {
+    public void setDescription(java.util.List<String> description) {
         this.description = description;
     }
+
     @JsonGetter("description")
-    public List<String> getDescription() {
+    public java.util.List<String> getDescription() {
         return this.description;
     }
+
     @JsonSetter("startDate")
-    public void setStartDate(LocalDateTime startDate) {
+    public void setStartDate(java.time.LocalDateTime startDate) {
         this.startDate = startDate;
     }
+
     @JsonGetter("startDate")
-    public LocalDateTime getStartDate() {
+    public java.time.LocalDateTime getStartDate() {
         return this.startDate;
     }
+
     @JsonSetter("coordinate")
     public void setCoordinate(AutobahnCoordinate coordinate) {
         this.coordinate = coordinate;
     }
+
     @JsonGetter("coordinate")
     public AutobahnCoordinate getCoordinate() {
         return this.coordinate;
     }
+
     @JsonSetter("lineString")
-    public void setLineString(List<AutobahnCoordinate> lineString) {
+    public void setLineString(java.util.List<AutobahnCoordinate> lineString) {
         this.lineString = lineString;
     }
+
     @JsonGetter("lineString")
-    public List<AutobahnCoordinate> getLineString() {
+    public java.util.List<AutobahnCoordinate> getLineString() {
         return this.lineString;
     }
 }
+

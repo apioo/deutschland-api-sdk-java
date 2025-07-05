@@ -5,71 +5,85 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.*;
+
 public class Warning {
     private String id;
     private String severity;
     private String urgency;
     private String type;
     private String title;
-    private LocalDateTime startDate;
-    private LocalDateTime expiresDate;
+    private java.time.LocalDateTime startDate;
+    private java.time.LocalDateTime expiresDate;
+
     @JsonSetter("id")
     public void setId(String id) {
         this.id = id;
     }
+
     @JsonGetter("id")
     public String getId() {
         return this.id;
     }
+
     @JsonSetter("severity")
     public void setSeverity(String severity) {
         this.severity = severity;
     }
+
     @JsonGetter("severity")
     public String getSeverity() {
         return this.severity;
     }
+
     @JsonSetter("urgency")
     public void setUrgency(String urgency) {
         this.urgency = urgency;
     }
+
     @JsonGetter("urgency")
     public String getUrgency() {
         return this.urgency;
     }
+
     @JsonSetter("type")
     public void setType(String type) {
         this.type = type;
     }
+
     @JsonGetter("type")
     public String getType() {
         return this.type;
     }
+
     @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
+
     @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
+
     @JsonSetter("startDate")
-    public void setStartDate(LocalDateTime startDate) {
+    public void setStartDate(java.time.LocalDateTime startDate) {
         this.startDate = startDate;
     }
+
     @JsonGetter("startDate")
-    public LocalDateTime getStartDate() {
+    public java.time.LocalDateTime getStartDate() {
         return this.startDate;
     }
+
     @JsonSetter("expiresDate")
-    public void setExpiresDate(LocalDateTime expiresDate) {
+    public void setExpiresDate(java.time.LocalDateTime expiresDate) {
         this.expiresDate = expiresDate;
     }
+
     @JsonGetter("expiresDate")
-    public LocalDateTime getExpiresDate() {
+    public java.time.LocalDateTime getExpiresDate() {
         return this.expiresDate;
     }
 }
+

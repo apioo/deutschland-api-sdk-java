@@ -5,17 +5,19 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+
 public class AutobahnWarningCollection {
-    private List<AutobahnWarning> entries;
+    private java.util.List<AutobahnWarning> entries;
+
     @JsonSetter("entries")
-    public void setEntries(List<AutobahnWarning> entries) {
+    public void setEntries(java.util.List<AutobahnWarning> entries) {
         this.entries = entries;
     }
+
     @JsonGetter("entries")
-    public List<AutobahnWarning> getEntries() {
+    public java.util.List<AutobahnWarning> getEntries() {
         return this.entries;
     }
 }
+

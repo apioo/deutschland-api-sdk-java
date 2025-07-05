@@ -5,17 +5,19 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+
 public class BundestagMemberCollection {
-    private List<BundestagMember> entries;
+    private java.util.List<BundestagMember> entries;
+
     @JsonSetter("entries")
-    public void setEntries(List<BundestagMember> entries) {
+    public void setEntries(java.util.List<BundestagMember> entries) {
         this.entries = entries;
     }
+
     @JsonGetter("entries")
-    public List<BundestagMember> getEntries() {
+    public java.util.List<BundestagMember> getEntries() {
         return this.entries;
     }
 }
+

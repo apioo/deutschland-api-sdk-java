@@ -15,15 +15,15 @@ import app.sdkgen.client.Parser;
 import app.sdkgen.client.TokenStoreInterface;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.hc.client5.http.classic.methods.*;
+import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
 import org.apache.hc.core5.http.ContentType;
-import org.apache.hc.core5.http.io.entity.EntityUtils;
-import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.apache.hc.core5.http.io.entity.*;
 import org.apache.hc.core5.net.URIBuilder;
+import org.apache.hc.core5.net.URLEncodedUtils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,27 +34,36 @@ public class Client extends ClientAbstract {
         super(baseUrl, credentials);
     }
 
-    public JobTag job()
+    public AuthorizationTag authorization()
     {
-        return new JobTag(
+        return new AuthorizationTag(
             this.httpClient,
             this.objectMapper,
             this.parser
         );
     }
 
-    public HospitalTag hospital()
+    public AutobahnTag autobahn()
     {
-        return new HospitalTag(
+        return new AutobahnTag(
             this.httpClient,
             this.objectMapper,
             this.parser
         );
     }
 
-    public WarningTag warning()
+    public BundesratTag bundesrat()
     {
-        return new WarningTag(
+        return new BundesratTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
+    public BundestagTag bundestag()
+    {
+        return new BundestagTag(
             this.httpClient,
             this.objectMapper,
             this.parser
@@ -79,45 +88,18 @@ public class Client extends ClientAbstract {
         );
     }
 
-    public StateTag state()
+    public HospitalTag hospital()
     {
-        return new StateTag(
+        return new HospitalTag(
             this.httpClient,
             this.objectMapper,
             this.parser
         );
     }
 
-    public BundestagTag bundestag()
+    public JobTag job()
     {
-        return new BundestagTag(
-            this.httpClient,
-            this.objectMapper,
-            this.parser
-        );
-    }
-
-    public BundesratTag bundesrat()
-    {
-        return new BundesratTag(
-            this.httpClient,
-            this.objectMapper,
-            this.parser
-        );
-    }
-
-    public AutobahnTag autobahn()
-    {
-        return new AutobahnTag(
-            this.httpClient,
-            this.objectMapper,
-            this.parser
-        );
-    }
-
-    public AuthorizationTag authorization()
-    {
-        return new AuthorizationTag(
+        return new JobTag(
             this.httpClient,
             this.objectMapper,
             this.parser
@@ -133,15 +115,33 @@ public class Client extends ClientAbstract {
         );
     }
 
+    public StateTag state()
+    {
+        return new StateTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
+    public WarningTag warning()
+    {
+        return new WarningTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
 
 
     public static Client build(String clientId, String clientSecret, TokenStoreInterface tokenStore, List<String> scopes) throws InvalidCredentialsException
     {
-        return new Client("https://api.deutschland-api.dev/", new OAuth2(clientId, clientSecret, "https://api.deutschland-api.dev/authorization/token", "", tokenStore, scopes));
+        return new Client("http://localhost", new OAuth2(clientId, clientSecret, "http://localhost/authorization/token", "", tokenStore, scopes));
     }
 
     public static Client buildAnonymous() throws InvalidCredentialsException
     {
-        return new Client("https://api.deutschland-api.dev/", new Anonymous());
+        return new Client("http://localhost", new Anonymous());
     }
 }

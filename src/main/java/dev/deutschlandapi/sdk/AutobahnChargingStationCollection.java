@@ -5,17 +5,19 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+
 public class AutobahnChargingStationCollection {
-    private List<AutobahnChargingStation> entries;
+    private java.util.List<AutobahnChargingStation> entries;
+
     @JsonSetter("entries")
-    public void setEntries(List<AutobahnChargingStation> entries) {
+    public void setEntries(java.util.List<AutobahnChargingStation> entries) {
         this.entries = entries;
     }
+
     @JsonGetter("entries")
-    public List<AutobahnChargingStation> getEntries() {
+    public java.util.List<AutobahnChargingStation> getEntries() {
         return this.entries;
     }
 }
+

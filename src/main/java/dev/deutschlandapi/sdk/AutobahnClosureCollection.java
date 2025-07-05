@@ -5,17 +5,19 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+
 public class AutobahnClosureCollection {
-    private List<AutobahnClosure> entries;
+    private java.util.List<AutobahnClosure> entries;
+
     @JsonSetter("entries")
-    public void setEntries(List<AutobahnClosure> entries) {
+    public void setEntries(java.util.List<AutobahnClosure> entries) {
         this.entries = entries;
     }
+
     @JsonGetter("entries")
-    public List<AutobahnClosure> getEntries() {
+    public java.util.List<AutobahnClosure> getEntries() {
         return this.entries;
     }
 }
+

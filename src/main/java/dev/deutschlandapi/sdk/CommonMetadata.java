@@ -5,9 +5,6 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.util.Map;
-import java.util.HashMap;
-public class CommonMetadata extends HashMap<String, String> {
+public class CommonMetadata extends java.util.HashMap<String, String> {
 }
+

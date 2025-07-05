@@ -5,9 +5,8 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.*;
+
 public class BundestagMember {
     private String id;
     private String name;
@@ -18,94 +17,117 @@ public class BundestagMember {
     private String elected;
     private String photo;
     private String photoLarge;
-    private LocalDateTime photoLastChanged;
-    private LocalDateTime lastChanged;
+    private java.time.LocalDateTime photoLastChanged;
+    private java.time.LocalDateTime lastChanged;
+
     @JsonSetter("id")
     public void setId(String id) {
         this.id = id;
     }
+
     @JsonGetter("id")
     public String getId() {
         return this.id;
     }
+
     @JsonSetter("name")
     public void setName(String name) {
         this.name = name;
     }
+
     @JsonGetter("name")
     public String getName() {
         return this.name;
     }
+
     @JsonSetter("party")
     public void setParty(String party) {
         this.party = party;
     }
+
     @JsonGetter("party")
     public String getParty() {
         return this.party;
     }
+
     @JsonSetter("bioUrl")
     public void setBioUrl(String bioUrl) {
         this.bioUrl = bioUrl;
     }
+
     @JsonGetter("bioUrl")
     public String getBioUrl() {
         return this.bioUrl;
     }
+
     @JsonSetter("state")
     public void setState(String state) {
         this.state = state;
     }
+
     @JsonGetter("state")
     public String getState() {
         return this.state;
     }
+
     @JsonSetter("constituency")
     public void setConstituency(BundestagConstituency constituency) {
         this.constituency = constituency;
     }
+
     @JsonGetter("constituency")
     public BundestagConstituency getConstituency() {
         return this.constituency;
     }
+
     @JsonSetter("elected")
     public void setElected(String elected) {
         this.elected = elected;
     }
+
     @JsonGetter("elected")
     public String getElected() {
         return this.elected;
     }
+
     @JsonSetter("photo")
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
     @JsonGetter("photo")
     public String getPhoto() {
         return this.photo;
     }
+
     @JsonSetter("photoLarge")
     public void setPhotoLarge(String photoLarge) {
         this.photoLarge = photoLarge;
     }
+
     @JsonGetter("photoLarge")
     public String getPhotoLarge() {
         return this.photoLarge;
     }
+
     @JsonSetter("photoLastChanged")
-    public void setPhotoLastChanged(LocalDateTime photoLastChanged) {
+    public void setPhotoLastChanged(java.time.LocalDateTime photoLastChanged) {
         this.photoLastChanged = photoLastChanged;
     }
+
     @JsonGetter("photoLastChanged")
-    public LocalDateTime getPhotoLastChanged() {
+    public java.time.LocalDateTime getPhotoLastChanged() {
         return this.photoLastChanged;
     }
+
     @JsonSetter("lastChanged")
-    public void setLastChanged(LocalDateTime lastChanged) {
+    public void setLastChanged(java.time.LocalDateTime lastChanged) {
         this.lastChanged = lastChanged;
     }
+
     @JsonGetter("lastChanged")
-    public LocalDateTime getLastChanged() {
+    public java.time.LocalDateTime getLastChanged() {
         return this.lastChanged;
     }
 }
+

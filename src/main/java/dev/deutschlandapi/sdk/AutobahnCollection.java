@@ -5,17 +5,19 @@
 
 package dev.deutschlandapi.sdk;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+
 public class AutobahnCollection {
-    private List<String> roads;
+    private java.util.List<String> roads;
+
     @JsonSetter("roads")
-    public void setRoads(List<String> roads) {
+    public void setRoads(java.util.List<String> roads) {
         this.roads = roads;
     }
+
     @JsonGetter("roads")
-    public List<String> getRoads() {
+    public java.util.List<String> getRoads() {
         return this.roads;
     }
 }
+

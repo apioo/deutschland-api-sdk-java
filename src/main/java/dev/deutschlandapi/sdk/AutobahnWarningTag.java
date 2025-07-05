@@ -13,15 +13,15 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.classic.methods.*;
+import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
 import org.apache.hc.core5.http.ContentType;
-import org.apache.hc.core5.http.io.entity.EntityUtils;
-import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.apache.hc.core5.http.io.entity.*;
 import org.apache.hc.core5.net.URIBuilder;
+import org.apache.hc.core5.net.URLEncodedUtils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,28 +50,42 @@ public class AutobahnWarningTag extends TagAbstract {
 
             HttpGet request = new HttpGet(builder.build());
 
-            final Parser.HttpReturn resp = this.httpClient.execute(request, response -> {
-                return this.parser.handle(response.getCode(), EntityUtils.toString(response.getEntity()));
+
+            return this.httpClient.execute(request, response -> {
+                if (response.getCode() >= 200 && response.getCode() <= 299) {
+                    var data = this.parser.parse(EntityUtils.toString(response.getEntity()), new TypeReference<AutobahnWarningCollection>(){});
+
+                    return data;
+                }
+
+                var statusCode = response.getCode();
+                if (statusCode == 400) {
+                    var data = this.parser.parse(EntityUtils.toString(response.getEntity()), new TypeReference<Response>(){});
+
+                    throw new ResponseException(data);
+                }
+
+                if (statusCode == 404) {
+                    var data = this.parser.parse(EntityUtils.toString(response.getEntity()), new TypeReference<Response>(){});
+
+                    throw new ResponseException(data);
+                }
+
+                if (statusCode == 500) {
+                    var data = this.parser.parse(EntityUtils.toString(response.getEntity()), new TypeReference<Response>(){});
+
+                    throw new ResponseException(data);
+                }
+
+                throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
             });
-
-            if (resp.code >= 200 && resp.code < 300) {
-                return this.parser.parse(resp.payload, new TypeReference<AutobahnWarningCollection>(){});
-            }
-
-            switch (resp.code) {
-                case 400:
-                    throw new ResponseException(this.parser.parse(resp.payload, new TypeReference<Response>(){}));
-                case 404:
-                    throw new ResponseException(this.parser.parse(resp.payload, new TypeReference<Response>(){}));
-                case 500:
-                    throw new ResponseException(this.parser.parse(resp.payload, new TypeReference<Response>(){}));
-                default:
-                    throw new UnknownStatusCodeException("The server returned an unknown status code");
-            }
+        } catch (ClientException e) {
+            throw e;
         } catch (URISyntaxException | IOException e) {
             throw new ClientException("An unknown error occurred: " + e.getMessage(), e);
         }
     }
+
 
 
 }
