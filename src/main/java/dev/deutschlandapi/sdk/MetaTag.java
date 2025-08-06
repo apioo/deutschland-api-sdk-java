@@ -33,6 +33,9 @@ public class MetaTag extends TagAbstract {
     }
 
 
+    /**
+     * Returns meta information and links about the current installed Fusio version
+     */
     public SystemAbout getAbout() throws ClientException {
         try {
             Map<String, Object> pathParams = new HashMap<>();
