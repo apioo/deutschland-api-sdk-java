@@ -34,7 +34,7 @@ public class BundestagMemberTag extends TagAbstract {
 
 
     /**
-     * Returns specific member of the Bundestag
+     * Returns a specific member of the Bundestag
      */
     public BundestagMember get(String memberId) throws ClientException {
         try {
