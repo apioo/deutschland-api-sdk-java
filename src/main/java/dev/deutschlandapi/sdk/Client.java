@@ -115,6 +115,15 @@ public class Client extends ClientAbstract {
         );
     }
 
+    public NewsTag news()
+    {
+        return new NewsTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
     public StateTag state()
     {
         return new StateTag(
