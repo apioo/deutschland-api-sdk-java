@@ -8,47 +8,47 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class News {
+    @JsonProperty("id")
     private String id;
+
+    @JsonProperty("title")
     private String title;
+
+    @JsonProperty("link")
     private String link;
+
+    @JsonProperty("updated")
     private java.time.LocalDateTime updated;
 
-    @JsonSetter("id")
+
     public void setId(String id) {
         this.id = id;
     }
 
-    @JsonGetter("id")
     public String getId() {
         return this.id;
     }
 
-    @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
 
-    @JsonSetter("link")
     public void setLink(String link) {
         this.link = link;
     }
 
-    @JsonGetter("link")
     public String getLink() {
         return this.link;
     }
 
-    @JsonSetter("updated")
     public void setUpdated(java.time.LocalDateTime updated) {
         this.updated = updated;
     }
 
-    @JsonGetter("updated")
     public java.time.LocalDateTime getUpdated() {
         return this.updated;
     }

@@ -8,80 +8,80 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class Job {
+    @JsonProperty("job")
     private String job;
+
+    @JsonProperty("title")
     private String title;
+
+    @JsonProperty("number")
     private String number;
+
+    @JsonProperty("location")
     private JobLocation location;
+
+    @JsonProperty("employer")
     private String employer;
+
+    @JsonProperty("publishDate")
     private java.time.LocalDateTime publishDate;
+
+    @JsonProperty("entranceDate")
     private java.time.LocalDateTime entranceDate;
 
-    @JsonSetter("job")
+
     public void setJob(String job) {
         this.job = job;
     }
 
-    @JsonGetter("job")
     public String getJob() {
         return this.job;
     }
 
-    @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
 
-    @JsonSetter("number")
     public void setNumber(String number) {
         this.number = number;
     }
 
-    @JsonGetter("number")
     public String getNumber() {
         return this.number;
     }
 
-    @JsonSetter("location")
     public void setLocation(JobLocation location) {
         this.location = location;
     }
 
-    @JsonGetter("location")
     public JobLocation getLocation() {
         return this.location;
     }
 
-    @JsonSetter("employer")
     public void setEmployer(String employer) {
         this.employer = employer;
     }
 
-    @JsonGetter("employer")
     public String getEmployer() {
         return this.employer;
     }
 
-    @JsonSetter("publishDate")
     public void setPublishDate(java.time.LocalDateTime publishDate) {
         this.publishDate = publishDate;
     }
 
-    @JsonGetter("publishDate")
     public java.time.LocalDateTime getPublishDate() {
         return this.publishDate;
     }
 
-    @JsonSetter("entranceDate")
     public void setEntranceDate(java.time.LocalDateTime entranceDate) {
         this.entranceDate = entranceDate;
     }
 
-    @JsonGetter("entranceDate")
     public java.time.LocalDateTime getEntranceDate() {
         return this.entranceDate;
     }

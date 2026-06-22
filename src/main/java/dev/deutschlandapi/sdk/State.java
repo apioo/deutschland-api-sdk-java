@@ -8,37 +8,37 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class State {
+    @JsonProperty("id")
     private String id;
+
+    @JsonProperty("name")
     private String name;
+
     @JsonPropertyDescription("Size of the area in km2")
+    @JsonProperty("area")
     private Integer area;
 
-    @JsonSetter("id")
+
     public void setId(String id) {
         this.id = id;
     }
 
-    @JsonGetter("id")
     public String getId() {
         return this.id;
     }
 
-    @JsonSetter("name")
     public void setName(String name) {
         this.name = name;
     }
 
-    @JsonGetter("name")
     public String getName() {
         return this.name;
     }
 
-    @JsonSetter("area")
     public void setArea(Integer area) {
         this.area = area;
     }
 
-    @JsonGetter("area")
     public Integer getArea() {
         return this.area;
     }

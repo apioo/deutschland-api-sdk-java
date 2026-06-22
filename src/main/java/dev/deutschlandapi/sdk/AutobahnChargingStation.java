@@ -8,47 +8,47 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class AutobahnChargingStation {
+    @JsonProperty("id")
     private String id;
+
+    @JsonProperty("title")
     private String title;
+
+    @JsonProperty("description")
     private java.util.List<String> description;
+
+    @JsonProperty("coordinate")
     private AutobahnCoordinate coordinate;
 
-    @JsonSetter("id")
+
     public void setId(String id) {
         this.id = id;
     }
 
-    @JsonGetter("id")
     public String getId() {
         return this.id;
     }
 
-    @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
 
-    @JsonSetter("description")
     public void setDescription(java.util.List<String> description) {
         this.description = description;
     }
 
-    @JsonGetter("description")
     public java.util.List<String> getDescription() {
         return this.description;
     }
 
-    @JsonSetter("coordinate")
     public void setCoordinate(AutobahnCoordinate coordinate) {
         this.coordinate = coordinate;
     }
 
-    @JsonGetter("coordinate")
     public AutobahnCoordinate getCoordinate() {
         return this.coordinate;
     }

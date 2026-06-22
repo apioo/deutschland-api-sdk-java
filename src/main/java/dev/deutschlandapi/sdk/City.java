@@ -8,102 +8,102 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class City {
+    @JsonProperty("id")
     private Integer id;
+
+    @JsonProperty("state")
     private String state;
+
+    @JsonProperty("rb")
     private String rb;
+
+    @JsonProperty("district")
     private String district;
+
+    @JsonProperty("verb")
     private String verb;
+
+    @JsonProperty("gem")
     private String gem;
+
+    @JsonProperty("name")
     private String name;
+
+    @JsonProperty("zipCode")
     private String zipCode;
+
+    @JsonProperty("area")
     private Integer area;
 
-    @JsonSetter("id")
+
     public void setId(Integer id) {
         this.id = id;
     }
 
-    @JsonGetter("id")
     public Integer getId() {
         return this.id;
     }
 
-    @JsonSetter("state")
     public void setState(String state) {
         this.state = state;
     }
 
-    @JsonGetter("state")
     public String getState() {
         return this.state;
     }
 
-    @JsonSetter("rb")
     public void setRb(String rb) {
         this.rb = rb;
     }
 
-    @JsonGetter("rb")
     public String getRb() {
         return this.rb;
     }
 
-    @JsonSetter("district")
     public void setDistrict(String district) {
         this.district = district;
     }
 
-    @JsonGetter("district")
     public String getDistrict() {
         return this.district;
     }
 
-    @JsonSetter("verb")
     public void setVerb(String verb) {
         this.verb = verb;
     }
 
-    @JsonGetter("verb")
     public String getVerb() {
         return this.verb;
     }
 
-    @JsonSetter("gem")
     public void setGem(String gem) {
         this.gem = gem;
     }
 
-    @JsonGetter("gem")
     public String getGem() {
         return this.gem;
     }
 
-    @JsonSetter("name")
     public void setName(String name) {
         this.name = name;
     }
 
-    @JsonGetter("name")
     public String getName() {
         return this.name;
     }
 
-    @JsonSetter("zipCode")
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 
-    @JsonGetter("zipCode")
     public String getZipCode() {
         return this.zipCode;
     }
 
-    @JsonSetter("area")
     public void setArea(Integer area) {
         this.area = area;
     }
 
-    @JsonGetter("area")
     public Integer getArea() {
         return this.area;
     }

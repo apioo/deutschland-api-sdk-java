@@ -8,58 +8,58 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class JobLocation {
+    @JsonProperty("zip")
     private String zip;
+
+    @JsonProperty("place")
     private String place;
+
+    @JsonProperty("state")
     private String state;
+
+    @JsonProperty("country")
     private String country;
+
+    @JsonProperty("coordinate")
     private JobCoordinate coordinate;
 
-    @JsonSetter("zip")
+
     public void setZip(String zip) {
         this.zip = zip;
     }
 
-    @JsonGetter("zip")
     public String getZip() {
         return this.zip;
     }
 
-    @JsonSetter("place")
     public void setPlace(String place) {
         this.place = place;
     }
 
-    @JsonGetter("place")
     public String getPlace() {
         return this.place;
     }
 
-    @JsonSetter("state")
     public void setState(String state) {
         this.state = state;
     }
 
-    @JsonGetter("state")
     public String getState() {
         return this.state;
     }
 
-    @JsonSetter("country")
     public void setCountry(String country) {
         this.country = country;
     }
 
-    @JsonGetter("country")
     public String getCountry() {
         return this.country;
     }
 
-    @JsonSetter("coordinate")
     public void setCoordinate(JobCoordinate coordinate) {
         this.coordinate = coordinate;
     }
 
-    @JsonGetter("coordinate")
     public JobCoordinate getCoordinate() {
         return this.coordinate;
     }

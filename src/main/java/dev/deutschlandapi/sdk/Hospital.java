@@ -8,47 +8,47 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class Hospital {
+    @JsonProperty("id")
     private String id;
+
+    @JsonProperty("title")
     private String title;
+
+    @JsonProperty("address")
     private String address;
+
+    @JsonProperty("link")
     private String link;
 
-    @JsonSetter("id")
+
     public void setId(String id) {
         this.id = id;
     }
 
-    @JsonGetter("id")
     public String getId() {
         return this.id;
     }
 
-    @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
 
-    @JsonSetter("address")
     public void setAddress(String address) {
         this.address = address;
     }
 
-    @JsonGetter("address")
     public String getAddress() {
         return this.address;
     }
 
-    @JsonSetter("link")
     public void setLink(String link) {
         this.link = link;
     }
 
-    @JsonGetter("link")
     public String getLink() {
         return this.link;
     }

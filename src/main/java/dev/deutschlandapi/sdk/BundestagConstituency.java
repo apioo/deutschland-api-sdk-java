@@ -8,25 +8,25 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class BundestagConstituency {
+    @JsonProperty("number")
     private String number;
+
+    @JsonProperty("name")
     private String name;
 
-    @JsonSetter("number")
+
     public void setNumber(String number) {
         this.number = number;
     }
 
-    @JsonGetter("number")
     public String getNumber() {
         return this.number;
     }
 
-    @JsonSetter("name")
     public void setName(String name) {
         this.name = name;
     }
 
-    @JsonGetter("name")
     public String getName() {
         return this.name;
     }
