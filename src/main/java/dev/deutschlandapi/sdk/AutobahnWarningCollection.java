@@ -8,14 +8,14 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class AutobahnWarningCollection {
+    @JsonProperty("entries")
     private java.util.List<AutobahnWarning> entries;
 
-    @JsonSetter("entries")
+
     public void setEntries(java.util.List<AutobahnWarning> entries) {
         this.entries = entries;
     }
 
-    @JsonGetter("entries")
     public java.util.List<AutobahnWarning> getEntries() {
         return this.entries;
     }

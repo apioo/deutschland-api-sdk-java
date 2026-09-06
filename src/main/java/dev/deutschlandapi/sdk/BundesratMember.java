@@ -8,146 +8,146 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class BundesratMember {
+    @JsonProperty("honorificTitle")
     private String honorificTitle;
+
+    @JsonProperty("firstName")
     private String firstName;
+
+    @JsonProperty("name")
     private String name;
+
+    @JsonProperty("party")
     private String party;
+
+    @JsonProperty("state")
     private String state;
+
+    @JsonProperty("member")
     private Boolean member;
+
+    @JsonProperty("designated")
     private Boolean designated;
+
+    @JsonProperty("url")
     private String url;
+
+    @JsonProperty("imagePath")
     private String imagePath;
+
+    @JsonProperty("imageDate")
     private java.time.LocalDateTime imageDate;
+
+    @JsonProperty("detail")
     private String detail;
+
+    @JsonProperty("bio")
     private String bio;
+
+    @JsonProperty("address")
     private String address;
 
-    @JsonSetter("honorificTitle")
+
     public void setHonorificTitle(String honorificTitle) {
         this.honorificTitle = honorificTitle;
     }
 
-    @JsonGetter("honorificTitle")
     public String getHonorificTitle() {
         return this.honorificTitle;
     }
 
-    @JsonSetter("firstName")
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    @JsonGetter("firstName")
     public String getFirstName() {
         return this.firstName;
     }
 
-    @JsonSetter("name")
     public void setName(String name) {
         this.name = name;
     }
 
-    @JsonGetter("name")
     public String getName() {
         return this.name;
     }
 
-    @JsonSetter("party")
     public void setParty(String party) {
         this.party = party;
     }
 
-    @JsonGetter("party")
     public String getParty() {
         return this.party;
     }
 
-    @JsonSetter("state")
     public void setState(String state) {
         this.state = state;
     }
 
-    @JsonGetter("state")
     public String getState() {
         return this.state;
     }
 
-    @JsonSetter("member")
     public void setMember(Boolean member) {
         this.member = member;
     }
 
-    @JsonGetter("member")
     public Boolean getMember() {
         return this.member;
     }
 
-    @JsonSetter("designated")
     public void setDesignated(Boolean designated) {
         this.designated = designated;
     }
 
-    @JsonGetter("designated")
     public Boolean getDesignated() {
         return this.designated;
     }
 
-    @JsonSetter("url")
     public void setUrl(String url) {
         this.url = url;
     }
 
-    @JsonGetter("url")
     public String getUrl() {
         return this.url;
     }
 
-    @JsonSetter("imagePath")
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
 
-    @JsonGetter("imagePath")
     public String getImagePath() {
         return this.imagePath;
     }
 
-    @JsonSetter("imageDate")
     public void setImageDate(java.time.LocalDateTime imageDate) {
         this.imageDate = imageDate;
     }
 
-    @JsonGetter("imageDate")
     public java.time.LocalDateTime getImageDate() {
         return this.imageDate;
     }
 
-    @JsonSetter("detail")
     public void setDetail(String detail) {
         this.detail = detail;
     }
 
-    @JsonGetter("detail")
     public String getDetail() {
         return this.detail;
     }
 
-    @JsonSetter("bio")
     public void setBio(String bio) {
         this.bio = bio;
     }
 
-    @JsonGetter("bio")
     public String getBio() {
         return this.bio;
     }
 
-    @JsonSetter("address")
     public void setAddress(String address) {
         this.address = address;
     }
 
-    @JsonGetter("address")
     public String getAddress() {
         return this.address;
     }

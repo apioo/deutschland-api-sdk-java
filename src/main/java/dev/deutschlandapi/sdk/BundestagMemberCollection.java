@@ -8,14 +8,14 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class BundestagMemberCollection {
+    @JsonProperty("entries")
     private java.util.List<BundestagMember> entries;
 
-    @JsonSetter("entries")
+
     public void setEntries(java.util.List<BundestagMember> entries) {
         this.entries = entries;
     }
 
-    @JsonGetter("entries")
     public java.util.List<BundestagMember> getEntries() {
         return this.entries;
     }

@@ -52,6 +52,15 @@ public class Client extends ClientAbstract {
         );
     }
 
+    public BudgetTag budget()
+    {
+        return new BudgetTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
     public BundesratTag bundesrat()
     {
         return new BundesratTag(
@@ -109,6 +118,15 @@ public class Client extends ClientAbstract {
     public MetaTag meta()
     {
         return new MetaTag(
+            this.httpClient,
+            this.objectMapper,
+            this.parser
+        );
+    }
+
+    public NewsTag news()
+    {
+        return new NewsTag(
             this.httpClient,
             this.objectMapper,
             this.parser

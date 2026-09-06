@@ -8,69 +8,69 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class AutobahnParkingLorry {
+    @JsonProperty("id")
     private String id;
+
+    @JsonProperty("title")
     private String title;
+
+    @JsonProperty("subtitle")
     private String subtitle;
+
+    @JsonProperty("description")
     private java.util.List<String> description;
+
+    @JsonProperty("coordinate")
     private AutobahnCoordinate coordinate;
+
+    @JsonProperty("features")
     private java.util.List<String> features;
 
-    @JsonSetter("id")
+
     public void setId(String id) {
         this.id = id;
     }
 
-    @JsonGetter("id")
     public String getId() {
         return this.id;
     }
 
-    @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
 
-    @JsonSetter("subtitle")
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
 
-    @JsonGetter("subtitle")
     public String getSubtitle() {
         return this.subtitle;
     }
 
-    @JsonSetter("description")
     public void setDescription(java.util.List<String> description) {
         this.description = description;
     }
 
-    @JsonGetter("description")
     public java.util.List<String> getDescription() {
         return this.description;
     }
 
-    @JsonSetter("coordinate")
     public void setCoordinate(AutobahnCoordinate coordinate) {
         this.coordinate = coordinate;
     }
 
-    @JsonGetter("coordinate")
     public AutobahnCoordinate getCoordinate() {
         return this.coordinate;
     }
 
-    @JsonSetter("features")
     public void setFeatures(java.util.List<String> features) {
         this.features = features;
     }
 
-    @JsonGetter("features")
     public java.util.List<String> getFeatures() {
         return this.features;
     }

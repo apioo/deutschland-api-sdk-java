@@ -8,80 +8,80 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class Warning {
+    @JsonProperty("id")
     private String id;
+
+    @JsonProperty("severity")
     private String severity;
+
+    @JsonProperty("urgency")
     private String urgency;
+
+    @JsonProperty("type")
     private String type;
+
+    @JsonProperty("title")
     private String title;
+
+    @JsonProperty("startDate")
     private java.time.LocalDateTime startDate;
+
+    @JsonProperty("expiresDate")
     private java.time.LocalDateTime expiresDate;
 
-    @JsonSetter("id")
+
     public void setId(String id) {
         this.id = id;
     }
 
-    @JsonGetter("id")
     public String getId() {
         return this.id;
     }
 
-    @JsonSetter("severity")
     public void setSeverity(String severity) {
         this.severity = severity;
     }
 
-    @JsonGetter("severity")
     public String getSeverity() {
         return this.severity;
     }
 
-    @JsonSetter("urgency")
     public void setUrgency(String urgency) {
         this.urgency = urgency;
     }
 
-    @JsonGetter("urgency")
     public String getUrgency() {
         return this.urgency;
     }
 
-    @JsonSetter("type")
     public void setType(String type) {
         this.type = type;
     }
 
-    @JsonGetter("type")
     public String getType() {
         return this.type;
     }
 
-    @JsonSetter("title")
     public void setTitle(String title) {
         this.title = title;
     }
 
-    @JsonGetter("title")
     public String getTitle() {
         return this.title;
     }
 
-    @JsonSetter("startDate")
     public void setStartDate(java.time.LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    @JsonGetter("startDate")
     public java.time.LocalDateTime getStartDate() {
         return this.startDate;
     }
 
-    @JsonSetter("expiresDate")
     public void setExpiresDate(java.time.LocalDateTime expiresDate) {
         this.expiresDate = expiresDate;
     }
 
-    @JsonGetter("expiresDate")
     public java.time.LocalDateTime getExpiresDate() {
         return this.expiresDate;
     }

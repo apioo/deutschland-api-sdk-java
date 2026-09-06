@@ -8,47 +8,47 @@ package dev.deutschlandapi.sdk;
 import com.fasterxml.jackson.annotation.*;
 
 public class Collection<T> {
+    @JsonProperty("totalResults")
     private Integer totalResults;
+
+    @JsonProperty("startIndex")
     private Integer startIndex;
+
+    @JsonProperty("itemsPerPage")
     private Integer itemsPerPage;
+
+    @JsonProperty("entries")
     private java.util.List<T> entries;
 
-    @JsonSetter("totalResults")
+
     public void setTotalResults(Integer totalResults) {
         this.totalResults = totalResults;
     }
 
-    @JsonGetter("totalResults")
     public Integer getTotalResults() {
         return this.totalResults;
     }
 
-    @JsonSetter("startIndex")
     public void setStartIndex(Integer startIndex) {
         this.startIndex = startIndex;
     }
 
-    @JsonGetter("startIndex")
     public Integer getStartIndex() {
         return this.startIndex;
     }
 
-    @JsonSetter("itemsPerPage")
     public void setItemsPerPage(Integer itemsPerPage) {
         this.itemsPerPage = itemsPerPage;
     }
 
-    @JsonGetter("itemsPerPage")
     public Integer getItemsPerPage() {
         return this.itemsPerPage;
     }
 
-    @JsonSetter("entries")
     public void setEntries(java.util.List<T> entries) {
         this.entries = entries;
     }
 
-    @JsonGetter("entries")
     public java.util.List<T> getEntries() {
         return this.entries;
     }
