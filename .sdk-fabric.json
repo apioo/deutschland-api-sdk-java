@@ -1,0 +1,9 @@
+{
+  "name": "DeutschlandAPI",
+  "description": "DeutschlandAPI Java SDK managed by SDK Fabric",
+  "website": "https://sdk-fabric.org",
+  "namespace": "dev.deutschlandapi.sdk",
+  "namespace_path": "dev/deutschlandapi/sdk",
+  "group_id": "dev.deutschland-api",
+  "artifact_id": "sdk"
+}
